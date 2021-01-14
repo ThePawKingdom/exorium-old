@@ -31,7 +31,7 @@ class Bot(commands.AutoShardedBot):
                 print(f'[WARNING] Could not load extension {extension}: {tbe}')
 
 
-bot.load_extension('jishaku')
+self.bot.load_extension('jishaku')
 
 bot.session = aiohttp.ClientSession(loop=bot.loop)
 
