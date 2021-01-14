@@ -19,7 +19,7 @@ async def run():
         await bot.run(config.token)
         
 
- class Bot(commands.AutoShardedBot):
+class Bot(commands.AutoShardedBot):
      def __init__(self, **kwargs):
          super().__init__(
              command_prefix = get_prefix,
