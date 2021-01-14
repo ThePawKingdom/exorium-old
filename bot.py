@@ -16,7 +16,9 @@ async def on_ready():
     bot.get_channel(790239054868381697)
     await channel.send(embed=e)
     
-extensions = ['jishaku']
+extensions = ['jishaku',
+              'cogs.info'
+]
 
 if __name__ == '__bot__':
   for extension in extensions:
