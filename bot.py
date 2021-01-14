@@ -19,6 +19,7 @@ async def run():
         await bot.run(config.token)
         
 
+
 class Bot(commands.AutoShardedBot):
     def __init__(self, **kwargs):
         super().__init__(
