@@ -13,10 +13,10 @@ async def run():
     description = "A multifunctional bot"
     
     bot = Bot(description=description)
-    try:
-        await cache(bot)
-        bot.session = aiohttp.ClientSession(loop=bot.loop)
-        await bot.run(config.token)
+
+    await cache(bot)
+    bot.session = aiohttp.ClientSession(loop=bot.loop)
+    await bot.run(config.token)
 
 
 class Bot(commands.AutoShardedBot):
