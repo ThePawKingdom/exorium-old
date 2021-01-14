@@ -28,7 +28,7 @@ class Bot(commands.AutoShardedBot):
             owner_id = 698080201158033409,
             reconnect = True,
             chunk_guilds_at_startup=True,
-            allowed_mentions = discord.allowedMentions.none(),
+            allowed_mentions = discord.AllowedMentions.none(),
             max_messages=10000,
             intents=intents)
 
