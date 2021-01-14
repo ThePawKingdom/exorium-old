@@ -15,7 +15,6 @@ async def on_ready():
     
 extensions = ['cogs.info']
 
-if __name__ == '__bot__':
   for extension in extensions:
     bot.load_extension(extension)
     
