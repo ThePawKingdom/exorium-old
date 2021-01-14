@@ -7,17 +7,30 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
 
-bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_mentions=discord.AllowedMentions(roles=False, users=False, everyone=False))
+#  bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_mentions=discord.AllowedMentions(roles=False, users=False, everyone=False))
 
-@bot.event
-async def on_ready():
-    print("exorium has started successfully")
-    
-extensions = ['cogs.info']
+class Bot(commands.AutoShardedBot):
+    def __init__(self, **kwargs):
+        super().__init__(
+            command_prefix = get_prefix,
+            case_insensitive = True,
+            owner_id = 698080201158033409,
+            reconnect = True,
+            chunk_guilds_at_startup=True,
+            allowed_mentions = discord.AllowedMentions.none(),
+            max_messages=10000,
+            intents=intents)
 
-for extension in extensions:
-  bot.load_extension(extension)
-    
+        for extension in config.EXTENSIONS:
+            try:
+                self.load_extension(extension)
+                print(f'[EXTENSION] {extension} was loaded successfully!')
+            except Exception as e:
+                tb = traceback.format_exception(type(e), e, e.__traceback__) 
+                tbe = "".join(tb) + ""
+                print(f'[WARNING] Could not load extension {extension}: {tbe}')
+
+
 bot.load_extension('jishaku')
 
 bot.session = aiohttp.ClientSession(loop=bot.loop)
