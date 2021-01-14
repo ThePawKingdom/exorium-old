@@ -9,6 +9,16 @@ def get_prefix(bot, message):
 
 #  bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_mentions=discord.AllowedMentions(roles=False, users=False, everyone=False))
 
+async def run():
+    description = "A multifunctional bot"
+    
+    bot = Bot(description=description)
+    try:
+        await cache(bot)
+        bot.session = aiohttp.ClientSession(loop=bot.loop)
+        await bot.run(config.token)
+        
+
 class Bot(commands.AutoShardedBot):
     def __init__(self, **kwargs):
         super().__init__(
@@ -29,7 +39,3 @@ class Bot(commands.AutoShardedBot):
                 tb = traceback.format_exception(type(e), e, e.__traceback__) 
                 tbe = "".join(tb) + ""
                 print(f'[WARNING] Could not load extension {extension}: {tbe}')
-
-self.session = aiohttp.ClientSession(loop=self.loop)
-
-bot.run(config.token)
