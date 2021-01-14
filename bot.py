@@ -13,13 +13,13 @@ bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_men
 async def on_ready():
     print("exorium has started successfully")
     
-extensions = ['jishaku',
-              'cogs.info'
-]
+extensions = ['cogs.info']
 
 if __name__ == '__bot__':
   for extension in extensions:
     bot.load_extension(extension)
+    
+bot.load_extension('jishaku')
 
 bot.session = aiohttp.ClientSession(loop=bot.loop)
 
