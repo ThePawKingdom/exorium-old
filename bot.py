@@ -17,6 +17,8 @@ async def run():
         await cache(bot)
         bot.session = aiohttp.ClientSession(loop=bot.loop)
         await bot.run(config.token)
+    except KeyboardInterrupt:
+        print('KeyboardInterrupt')
 
 
 class Bot(commands.AutoShardedBot):
