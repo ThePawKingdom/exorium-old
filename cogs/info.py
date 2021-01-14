@@ -19,4 +19,4 @@ class info(commands.Cog, name="Info"):
         await ctx.send(f"\U0001f3d3 Pong   |   {discord_ms}")
 
 def setup(bot):
-    bot.add_cog(info(bot))
+  bot.add_cog(info(bot))
