@@ -2,7 +2,7 @@ import discord, config, aiohttp, psutil
 from discord.ext import commands
 
 def get_prefix(bot, message):
-    prefixes: ["e!", "exo "]
+    prefixes = ["e!", "exo "]
     
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
