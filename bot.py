@@ -30,6 +30,6 @@ class Bot(commands.AutoShardedBot):
                 tbe = "".join(tb) + ""
                 print(f'[WARNING] Could not load extension {extension}: {tbe}')
 
-bot.session = aiohttp.ClientSession(loop=bot.loop)
+self.session = aiohttp.ClientSession(loop=bot.loop)
 
 bot.run(config.token)
