@@ -1,8 +1,10 @@
 import discord, config, time
 
 
-
 class info(commands.Cog, name="Info"):
+    
+  def __init__(self, bot):
+    self.bot = bot
 
     @commands.command(brief="Bot's latency to discord")
     async def ping(self, ctx):
@@ -15,3 +17,6 @@ class info(commands.Cog, name="Info"):
             else:
                 discord_ms = "fucking dead"
         await ctx.send(f"\U0001f3d3 Pong   |   {discord_ms}")
+
+def setup(bot):
+    bot.add_cog(info(bot))
