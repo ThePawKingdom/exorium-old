@@ -27,7 +27,7 @@ class Bot(commands.AutoShardedBot):
             case_insensitive = True,
             owner_id = 698080201158033409,
             reconnect = True,
-            chunk_guilds_at_startup=True
+            chunk_guilds_at_startup=True,
             allowed_mentions = discord.allowedMentions.none(),
             max_messages=10000,
             intents=intents)
