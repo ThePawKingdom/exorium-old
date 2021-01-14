@@ -15,8 +15,8 @@ async def on_ready():
     
 extensions = ['cogs.info']
 
-  for extension in extensions:
-    bot.load_extension(extension)
+for extension in extensions:
+  bot.load_extension(extension)
     
 bot.load_extension('jishaku')
 
