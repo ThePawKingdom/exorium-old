@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_men
 async def on_ready():
     print("exorium has started successfully")
     e = discord.Embed(description=f"exorium has started successfully.", color=config.color)
-    bot.get_channel(790239054868381697)
+    channel = bot.get_channel(790239054868381697)
     await channel.send(embed=e)
     
 extensions = ['jishaku',
