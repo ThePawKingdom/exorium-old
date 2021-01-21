@@ -13,7 +13,6 @@ async def run():
     description = "A multifunctional bot"
     
     bot = Bot(description=description)
-    await cache(bot)
     bot.session = aiohttp.ClientSession(loop=bot.loop)
     await bot.run(config.token)
 
