@@ -21,7 +21,7 @@ async def run():
 class Bot(commands.AutoShardedBot):
     def __init__(self, **kwargs):
         super().__init__(
-            command_prefix = get_prefix,
+            command_prefix = get_Prefix,
             case_insensitive = True,
             owner_id = 698080201158033409,
             reconnect = True,
