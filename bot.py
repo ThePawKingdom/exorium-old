@@ -17,15 +17,7 @@ async def run():
     await bot.run(config.token)
 
 
-class Bot(commands.Bot):
-    def __init__(self, **kwargs):
-        super().__init__(
-            command_prefix = get_prefix,
-            case_insensitive = True,
-            owner_id = 698080201158033409,
-            reconnect = True,
-            allowed_mentions = discord.AllowedMentions.none(),
-            max_messages=10000)
+bot = commands.Bot(command_prefix=get_prefix, case_insensitive =True, allowed_mentions =discord.AllowedMentions.none(), max_messages=10000)
 
         for extension in config.EXTENSIONS:
             try:
