@@ -1,6 +1,10 @@
-import discord, config, aiohttp, psutil
+import discord
+import config
+import aiohttp
+import psutil
 import traceback
 from discord.ext import commands
+
 
 def get_prefix(bot, message):
     prefixes = ["e!", "exo "]
@@ -19,7 +23,7 @@ async def run():
     except KeyboardInterrupt:
         await bot.logout()
 
-bot = commands.Bot(command_prefix=get_prefix, case_insensitive =True, allowed_mentions =discord.AllowedMentions.none(), max_messages=10000)
+bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_mentions=discord.AllowedMentions.none(), max_messages=10000)
 
 for extension in config.extensions:
     try:
