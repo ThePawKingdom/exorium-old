@@ -29,7 +29,7 @@ class info(commands.Cog, name="Info"):
         Logs this bot out.
         """
 
-        await ctx.send("Logging out now\")
+        await ctx.send("Logging out now")
         await ctx.bot.logout()
 
 def setup(bot):
