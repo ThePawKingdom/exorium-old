@@ -14,14 +14,6 @@ def get_prefix(bot, message):
 
 #  bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_mentions=discord.AllowedMentions(roles=False, users=False, everyone=False))
 
-async def run():
-    description = "A multifunctional bot"
-    
-    try:
-        bot.run(config.token)
-    except KeyboardInterrupt:
-        await bot.logout()
-
 bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, allowed_mentions=discord.AllowedMentions.none(), max_messages=10000)
 
 for extension in config.extensions:
@@ -32,3 +24,5 @@ for extension in config.extensions:
         tb = traceback.format_exception(type(e), e, e.__traceback__)
         tbe = "".join(tb) + ""
         print(f'[WARNING] Could not load extension {extension}: {tbe}')
+
+bot.run(config.token)
