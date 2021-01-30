@@ -18,6 +18,7 @@ async def run():
         bot.run(config.token)
     except KeyboardInterrupt:
         await bot.logout()
+        bot.run(config.token)
 
 bot = commands.Bot(command_prefix=get_prefix, case_insensitive =True, allowed_mentions =discord.AllowedMentions.none(), max_messages=10000)
 
