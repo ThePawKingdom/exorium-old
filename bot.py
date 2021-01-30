@@ -27,5 +27,3 @@ for extension in config.extensions:
         tb = traceback.format_exception(type(e), e, e.__traceback__)
         tbe = "".join(tb) + ""
         print(f'[WARNING] Could not load extension {extension}: {tbe}')
-
-        bot.session = aiohttp.ClientSession(loop=bot.loop)
