@@ -2,9 +2,8 @@ import discord, config, time, aiohttp
 from discord.ext import commands
 
 class info(commands.Cog, name="Info"):
-    
-  def __init__(self, bot):
-    self.bot = bot
+    def __init__(self, bot):
+        self.bot = bot
 
     @commands.command(brief="Bot's latency to discord")
     async def ping(self, ctx):
@@ -33,4 +32,4 @@ class info(commands.Cog, name="Info"):
         await ctx.bot.logout()
 
 def setup(bot):
-  bot.add_cog(info(bot))
+    bot.add_cog(info(bot))
