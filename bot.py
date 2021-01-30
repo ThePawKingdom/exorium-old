@@ -14,7 +14,8 @@ async def run():
     description = "A multifunctional bot"
     
     bot = Bot(description=description)
-    bot.run(config.token)
+    try:
+        bot.run(config.token)
     except KeyboardInterrupt:
         await bot.logout()
 
