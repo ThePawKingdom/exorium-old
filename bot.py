@@ -17,7 +17,6 @@ def get_prefix(bot, message):
 async def run():
     description = "A multifunctional bot"
     
-    bot = Bot(description=description)
     try:
         bot.run(config.token)
     except KeyboardInterrupt:
