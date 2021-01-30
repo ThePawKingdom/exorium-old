@@ -1,4 +1,5 @@
-import discord, config, aiohttp, psutil, traceback
+import discord, config, aiohttp, psutil
+import traceback
 from discord.ext import commands
 
 def get_prefix(bot, message):
