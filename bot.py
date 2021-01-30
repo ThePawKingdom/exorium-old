@@ -20,14 +20,12 @@ async def run():
 class Bot(commands.Bot):
     def __init__(self, **kwargs):
         super().__init__(
-            command_prefix = get_Prefix,
+            command_prefix = get_prefix,
             case_insensitive = True,
             owner_id = 698080201158033409,
             reconnect = True,
-            chunk_guilds_at_startup=True,
             allowed_mentions = discord.AllowedMentions.none(),
-            max_messages=10000,
-            intents=intents)
+            max_messages=10000)
 
         for extension in config.EXTENSIONS:
             try:
