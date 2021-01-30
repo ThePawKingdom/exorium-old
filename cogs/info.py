@@ -9,7 +9,7 @@ class info(commands.Cog, name="Info"):
     async def ping(self, ctx):
         """ See bot's latency to discord """
         discord_start = time.monotonic()
-        bot.session = aiohttp.ClientSession(loop=self.bot.loop)
+        self.bot.session = aiohttp.ClientSession(loop=self.bot.loop)
         async with self.bot.session.get("https://discord.com/") as resp:
             if resp.status == 200:
                 discord_end = time.monotonic()
