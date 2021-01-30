@@ -21,7 +21,7 @@ bot = commands.Bot(command_prefix=get_prefix, case_insensitive =True, allowed_me
 
 for extension in config.extensions:
     try:
-        self.load_extension(extension)
+        bot.load_extension(extension)
         print(f'[extension] {extension} was loaded successfully!')
     except Exception as e:
         tb = traceback.format_exception(type(e), e, e.__traceback__)
